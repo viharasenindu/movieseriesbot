@@ -48,7 +48,7 @@ async def next_page(bot, query):
         offset = 0
     search = BUTTONS.get(key)
     if not search:
-        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
+        await query.answer("You are using one of my old messages, Please send the request again😊", show_alert=True)
         return
 
     files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
@@ -135,7 +135,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase')
+            k = await query.message.edit('This Movie Not Found In DataBase😑')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -156,11 +156,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat = await client.get_chat(grpid)
                     title = chat.title
                 except:
-                    await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
+                    await query.message.edit_text("Make sure I'm present in your group❗️❗️❗️", quote=True)
                     return await query.answer('Piracy Is Crime')
             else:
                 await query.message.edit_text(
-                    "I'm not connected to any groups!\nCheck /connections or connect to any groups",
+                    "I'm not connected to any groups❗️\nCheck /connections or connect to any groups",
                     quote=True
                 )
                 return await query.answer('Piracy Is Crime')
